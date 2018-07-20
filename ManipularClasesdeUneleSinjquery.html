@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .rojo{
+      color:yellow;
+    }
+    .azul{
+      color:dodgerblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hola Winny</h1>
+  <button>Cambiar color</button>
+  <script>
+
+    var h1 = document.querySelector('h1'),
+    boton = document.querySelector('button');
+
+    boton.addEventListener('click', function (){
+      if (!h1.classList.contains('rojo')){
+        h1.classList.add('rojo');
+        h1.classList.remove('azul');
+      }else{
+        h1.classList.add('azul');
+        h1.classList.remove('rojo');
+      }
+    });
+    function toogleClass(elemento, clase) {
+      if(elemento.classList.contains(clase)){
+        elemento.classList.remove(clase);
+      } else {
+        elemento.classList.add(clase);
+      }
+    }
+    h1.addEventListener('click', function(){
+      toogleClass(this, 'rojo');
+    });
+  </script>
+</body>
+</html>
